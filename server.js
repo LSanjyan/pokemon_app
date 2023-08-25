@@ -1,32 +1,21 @@
 const express = require('express');
 const app = express();
-const pokemon = require('./models/pokemon.js');
+const reactViews = require('jsx-view-engine');
+const { createEngine } = require('react-dom/server');
 
-//app.get('/', (req,res) => {
-  //  res.send('Welcome to the Pokemon App!')
+const pokemonData = require('./models/pokemon.js');
+
+app.set('view engine', 'jsx');
+app.engine('jsx', createEngine());
+
+//app.get('/', (req, res) => {
+  //res.send('Welcome to the Pokemon App!');
 //});
 
 app.get('/pokemon', (req, res) => {
-    res.send(pokemon)
+  res.render('Index', { pokemon: pokemonData });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(3000, () => {
-    console.log("Listening on Port 3000")
-})
+  console.log('Server is running on port 3000');
+});
