@@ -16,6 +16,7 @@ app.get('/pokemon', (req, res) => {
 });
 app.get('/pokemon/:id', (req, res) => {
   const pokemonId = req.params.id;
+  const selectedPokemon = pokemonData[pokemonId];
   res.send('You selected Pokemon ID: ${pokemonId');
 });
 
