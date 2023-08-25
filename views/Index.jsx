@@ -9,7 +9,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <h1 style={{ color: '#ffffff', backgroundColor: '#000000' }}>
+        <h1 style={{ color: 'White', backgroundColor: 'Green' }}>
           See All The Pokemon!
         </h1>
         <ul>
